@@ -1,0 +1,406 @@
+/**************************** CUSTOMS ****************************/
+:root {
+
+  /* backgrounds */
+  --primary: #F2B807;
+  --second: #F28F16;
+  --third: #F5DB13;
+  --white: #F6F7F9;
+  --dark: #212121;
+  --danger: #D93E30;
+
+  /* colors */
+  --gray-color: #A1A1A1;
+  --green-color: #70A83B;
+  --light-blue-color: ##A2CFF0;
+  --blue-color: #76AADB;
+  --red-color: #F76545;
+  --purple-color: #A974BC;
+  --brown-color: #9B897B;
+  --yellow-color: #F7C545;
+
+
+  /* Font sizes */
+  --big-font-legendary: 6.2rem;
+  --big-font: 4.2rem;
+  --p-big-font: 2.4rem;
+  --h1-font: 3.6rem;
+  --h2-big-font: 3.6rem;
+  --h2-font: 3.1rem;
+  --h3-font: 1.8rem;
+  --p-font: 1.2rem;
+
+  /* z index values */
+  --z-index-10: 10;
+  --z-index-100: 100;
+
+  /* font weigth */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-semibold: 600;
+
+  /* trasitions */
+  --tran-0-5: .5s
+}
+
+/*********************** RESETS ***************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Pokemon-Solid', 'Poppins', sans-serif;
+  letter-spacing: .2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+
+/****************************** UTILITIES ****************************************/
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/********************************* STYLES ************************************************/
+
+/*========== LOGUIN =========*/
+.login {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5rem;
+}
+
+.login__header {
+  width: 100%;
+  height: 15rem;
+  background-color: var(--red-color);
+  color: var(--dark);
+  font-size: var(--h3-font);
+  letter-spacing: .2rem;
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
+}
+
+.login__header-h3 {
+  margin-top: 3rem;
+}
+
+.pokeball {
+  position: absolute;
+  z-index: var(--z-index-10);
+  width: 10.3rem;
+  height: 10.3rem;
+  background: url('./assets/imgs/Pikachu-login.png') rgba(255, 255, 255, 0);
+  background-repeat: no-repeat;
+  background-size: 6rem;
+  background-position: 100% 130%;
+  border-radius: 50%;
+  border: .2rem solid #000;
+  bottom: -5rem;
+}
+
+.pokeball::before {
+  content: '';
+  width: 10rem;
+  height: 5rem;
+  background-color: red;
+  border-radius: 4.9rem 4.9rem 0 0;
+  position: absolute;
+}
+
+.details {
+  width: 10rem;
+  height: .5rem;
+  background-color: #333;
+  margin-top: 4.8rem;
+  position: absolute;
+}
+
+.details::before {
+  content: '';
+  width: 3rem;
+  height: 3rem;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: -1.1rem;
+  margin-left: 3.5rem;
+}
+
+.details::after {
+  content: '';
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #fff;
+  border-radius: 50%;
+  margin-top: -0.5rem;
+  margin-left: 4.1rem;
+  position: absolute;
+}
+
+
+.login__logo-container {
+  width: 80%;
+  height: auto;
+  margin-top: 8rem;
+}
+
+.login__logo {
+  max-width: 100%;
+}
+
+.login__form {
+  flex-direction: column;
+}
+
+.login__input {
+  display: block;
+  background-color: white;
+  font-size: var(--p-big-font);
+  margin: 0 auto;
+  letter-spacing: .2rem;
+  width: 75%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-bottom: 0.3rem solid transparent;
+  box-shadow: -3px 5px 9px 1px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s;
+  outline: none;
+}
+
+.login__label {
+  font-size: var(--p-font);
+  margin-top: 2rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.login__input:placeholder-shown+.login__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+
+.login__buton {
+  margin-top: 4rem;
+  padding: 2rem 6rem;
+  outline: none;
+  border: .2rem solid var(--dark);
+  border-radius: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff00;
+}
+
+.login__buton::after {
+  content: "";
+  background-color: var(--third);
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  top: 1rem;
+  left: 2rem;
+  transition: 0.2s;
+  border-radius: 1rem;
+}
+
+.login__buton:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+
+
+/*========== NAVMENU =========*/
+
+.header {
+  width: 100%;
+  height: 5.5rem;
+  background-color: var(--third);
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-100); */
+
+}
+
+.navbar {
+
+  width: 100%;
+  position: relative;
+  justify-content: space-between;
+}
+
+.navbar__header-content {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 2.6rem;
+}
+
+.navbar__logo {
+  width: 6rem;
+}
+
+.navbar-btn {
+  font-size: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-box {
+  position: fixed;
+  top: 0;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-index-100);
+  background-color: rgba(255, 255, 255, 0.594);
+  ;
+  transition: var(--tran-0-5);
+}
+
+.menu-box-hidden {
+  right: -100%;
+}
+
+.btn-close {
+  font-size: 3rem;
+  font-weight: var(--font-semibold);
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 1rem;
+  right: 2.6rem;
+  cursor: pointer;
+}
+
+.menu-content {
+  background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
+  height: 60%;
+}
+
+.menu-content__items {
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+  height: 100%;
+}
+
+.menu-content__logo {
+  width: 20rem;
+}
+
+.menu-content__ul {
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.menu-content__item {
+  font-size: var(--h2-big-font);
+  font-weight: var(--font-semibold);
+}
+
+
+
+/* ========= HOME ========== */
+
+.Home {
+  width: 100%;
+  background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
+  height: 100vh;
+  position: relative;
+}
+
+.banner-home {
+  width: 100%;
+  height: 29rem;
+}
+
+.banner-home__imgs {
+  width: 37.5rem;
+  height: 100%;
+  position: relative;
+}
+
+.banner-home__pikachu {
+  width: 23.5rem;
+  position: absolute;
+  top: 14.99%;
+  left: 0;
+  right: 13.63%;
+  bottom: -1.31%;
+  z-index: var(--z-index-10);
+}
+
+.banner-home__cloud {
+  position: absolute;
+  width: 14.5rem;
+  left: 35%;
+  top: 11%;
+}
+
+.banner-home__cloud--small {
+  width: 9.5rem;
+  left: 0%;
+  top: 54%;
+}
+
+.banner-home__pokeball-red {
+  width: 13.3rem;
+  position: absolute;
+  right: 5%;
+  top: 0;
+}
+
+.banner-home__pokeball-gray {
+  width: 9.5rem;
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 0%;
+}
+
