@@ -1,5 +1,5 @@
 import React from 'react'
-import NavMenu from './NavMenu'
+import NavMenu from './pokedex/NavMenu'
 import pikachu from '../assets/imgs/Pikachu.png'
 import cloud from '../assets/imgs/Cloud.png'
 import pokeballRed from '../assets/imgs/Pokeball2.png'
@@ -11,13 +11,7 @@ import { Routes, Route } from 'react-router-dom'
 
 const Home = () => {
    return (
-      <div className='Home '>
-
-         <Routes>
-            <Route></Route>
-         </Routes>
-
-         <NavMenu />
+      <div className='Home'>
 
          <div className="banner-home flex">
             <div className="banner-home__imgs">
@@ -29,9 +23,15 @@ const Home = () => {
             </div>
 
          </div>
-            <section className="inf-userName">
-               <h2 className='inf-userName__h2'>{`Hello Master pokemon Name`}</h2>
-            </section>
+         <section className="inf-userName flex">
+            <h2 className='inf-userName__h2'>{`Hello Master pokemon Name`}</h2>
+            <h3 className='inf-userName__p-big-font'>Find all your favorite Pokemon</h3>
+         </section>
+
+
+         <div className="home__btn-container flex">
+            <button className='home__button'>See pokemons</button>
+         </div>
       </div>
    )
 }

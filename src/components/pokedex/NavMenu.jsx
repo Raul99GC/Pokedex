@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import Logo from '../assets/imgs/Logo.png'
+import Logo from '../../assets/imgs/Logo.png'
+
+import { Routes, Route, NavLink } from 'react-router-dom'
+import Home from '../Home'
+import Pokedex from '../../Pokedex'
 
 const NavMenu = () => {
 
    const [btnMenu, setBtnMenu] = useState(false)
 
-   const clickBtnMenu = () =>{
-      if(!btnMenu){
+   const clickBtnMenu = () => {
+      if (!btnMenu) {
          setBtnMenu(true)
       }
       else {
@@ -37,7 +41,8 @@ const NavMenu = () => {
                         <img src={Logo} alt="Logo pokemon" />
                      </a>
                      <ul className='menu-content__ul flex'>
-                        <li className='menu-content__item'><a href="">Pokedex</a></li>
+                        <li className='menu-content__item'><NavLink to={'/'} href="">Home</NavLink></li>
+                        <li className='menu-content__item'><NavLink to={'/pokedex'} href="">Pokedex</NavLink></li>
                         <li className='menu-content__item'><a href="">Legendaries</a></li>
                         <li className='menu-content__item'><a href="">Algo mas</a></li>
                      </ul>
@@ -45,6 +50,9 @@ const NavMenu = () => {
                </div>
             </div>
          </nav>
+
+         
+
       </header>
    )
 }

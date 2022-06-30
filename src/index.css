@@ -7,12 +7,12 @@
   --third: #F5DB13;
   --white: #F6F7F9;
   --dark: #212121;
-  --danger: #D93E30;
+  --danger: #d93e30;
 
   /* colors */
   --gray-color: #A1A1A1;
   --green-color: #70A83B;
-  --light-blue-color: ##A2CFF0;
+  --light-blue-color: #A2CFF0;
   --blue-color: #76AADB;
   --red-color: #F76545;
   --purple-color: #A974BC;
@@ -23,11 +23,11 @@
   /* Font sizes */
   --big-font-legendary: 6.2rem;
   --big-font: 4.2rem;
-  --p-big-font: 2.4rem;
   --h1-font: 3.6rem;
   --h2-big-font: 3.6rem;
   --h2-font: 3.1rem;
   --h3-font: 1.8rem;
+  --p-big-font: 2.4rem;
   --p-font: 1.2rem;
 
   /* z index values */
@@ -85,6 +85,56 @@ button {
   background: none;
 }
 
+h1 {
+  font-size: var(--h1-font);
+}
+
+h2 {
+  font-size: var(--h2-font);
+}
+
+h3 {
+  font-size: var(--h3-font);
+}
+
+p {
+  /* font-size: var(--p-font); */
+}
+
+/* background imgs */
+
+.color-card-red {
+  background-color: var(--red-color);
+}
+
+.color-card-blue {
+  background-color: var(--blue-color);
+}
+
+.color-card-light-blue {
+  background-color: var(--light-blue-color);
+}
+
+.color-card-gray {
+  background-color: var(--gray-color);
+}
+
+.color-card-brown {
+  background-color: var(--brown-color);
+}
+
+.color-card-green {
+  background-color: var(--green-color);
+}
+
+.color-card-purple {
+  background-color: var(--purple-color);
+}
+
+.color-card-yellow {
+  background-color: var(--yellow-color);
+}
+
 
 /****************************** UTILITIES ****************************************/
 
@@ -94,6 +144,17 @@ button {
   justify-content: center;
 }
 
+.button {
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  border: none;
+  border-radius: 3rem;
+}
+
+
+.box-shadow {
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+
+}
 
 
 /********************************* STYLES ************************************************/
@@ -186,7 +247,7 @@ button {
 }
 
 .login__logo {
-  max-width: 100%;
+  width: 100%;
 }
 
 .login__form {
@@ -261,11 +322,12 @@ button {
   width: 100%;
   height: 5.5rem;
   background-color: var(--third);
-  /* position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: var(--z-index-100); */
-
+  z-index: 1000;
+  box-shadow: -1px 11px 14px -4px rgba(0, 0, 0, 0.66);
+  -webkit-box-shadow: -1px 11px 14px -4px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: -1px 11px 14px -4px rgba(0, 0, 0, 0.66);
 }
 
 .navbar {
@@ -298,8 +360,7 @@ button {
   width: 100%;
   height: 100%;
   z-index: var(--z-index-100);
-  background-color: rgba(255, 255, 255, 0.594);
-  ;
+  background-color: #45454589;
   transition: var(--tran-0-5);
 }
 
@@ -344,7 +405,9 @@ button {
   font-weight: var(--font-semibold);
 }
 
-
+.bx-x {
+  cursor: pointer;
+}
 
 /* ========= HOME ========== */
 
@@ -358,6 +421,7 @@ button {
 .banner-home {
   width: 100%;
   height: 29rem;
+  padding-top: 5rem;
 }
 
 .banner-home__imgs {
@@ -403,4 +467,188 @@ button {
   top: 10%;
   left: 0%;
 }
+
+.inf-userName {
+  width: 100%;
+  height: auto;
+  padding-top: 4rem;
+  flex-direction: column;
+  text-align: center;
+  letter-spacing: .35rem;
+  gap: 4rem;
+}
+
+.inf-userName__h2 {
+  font-weight: 300;
+  padding: 0 1rem;
+  font-size: var(--h2-big-font);
+}
+
+.home__btn-container {
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;
+  position: relative;
+}
+
+
+.home__button {
+  margin-top: 4rem;
+  width: 23.1rem;
+  height: 6.6rem;
+  outline: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #73D677;
+  box-shadow: 0px 0px 21px 3px #000000;
+  transition: .2s;
+}
+
+.home__button:active {
+  box-shadow: none;
+}
+
+
+/* =========== Pokedex ============ */
+
+.pokedex {
+  width: 100%;
+  /* background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%); */
+  position: relative;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pokedex__num-poke {
+  width: 100%;
+  width: 37.5rem;
+  margin-top: 2rem;
+}
+
+.pokedex__p-number {
+  font-size: var(--p-big-font);
+  padding: 1.5rem;
+  text-align: justify;
+}
+
+.filter {
+  width: 32.2rem;
+}
+
+.form-search {
+  padding-top: 8rem;
+}
+
+.form-search__input {
+  width: 100%;
+  border-radius: 4rem;
+  letter-spacing: .15rem;
+  padding: .8rem;
+  background-color: #F2F2F2;
+  border: none;
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+
+.btn-container-filter {
+  padding-top: 2rem;
+}
+
+.button--filter {
+  width: 7.7rem;
+  padding: .5rem;
+  font-size: 1.2rem;
+  background-color: #F2F2F2;
+
+}
+
+
+.pokedex-main {
+  padding-top: 5rem;
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+/* ========= Card preview ========== */
+
+.card-pre {
+  position: relative;
+  width: 33.6rem;
+  height: 16.2rem;
+  background-color: #F6F7F9;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card-pre__pokemon-name {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  text-transform: capitalize;
+}
+
+.card-pre__inf {
+  margin-top: 2rem;
+}
+
+.card-pre__number {
+  width: 4.6rem;
+  height: 4.6rem;
+  border: 3px solid #212121;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.card-pre__status {
+  width: 10.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-align: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+
+.card-pre__p {
+  font-size: var(--p-font);
+  padding-top: 1rem;
+
+}
+
+.card-pre__type-box {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  z-index: var(--z-index-100);
+  gap: 2rem;
+
+}
+
+.card-pre__type {
+  font-size: var(--p-font);
+  width: 5.7rem;
+  height: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.card-pre__img-box {
+  width: 33.6rem;
+  height: 100%;
+  /* background-color: red; */
+  justify-content: flex-end;
+}
+
+.card-pre__img {
+  width: 16rem;
+}
+
+
+/* ====== page CARD ====== */
 

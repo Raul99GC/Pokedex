@@ -10,17 +10,20 @@ import store from './store'
 
 // React Router
 import { HashRouter } from 'react-router-dom'
+import NavMenu from './components/pokedex/NavMenu'
+import AppRouter from './AppRouter'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HashRouter>
-    <Provider store={store}>
-                     
-    <Home />
-    </Provider>0
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
     </HashRouter>
 
+    {/* <NavMenu /> */}
+    {/* <Pokedex /> */}
     {/* <Login /> */}
     {/* <Pokedex /> */}
   </React.StrictMode>
