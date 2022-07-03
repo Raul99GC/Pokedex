@@ -21,10 +21,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <AppRouter />
       </Provider>
     </HashRouter>
-
-    {/* <NavMenu /> */}
-    {/* <Pokedex /> */}
-    {/* <Login /> */}
-    {/* <Pokedex /> */}
   </React.StrictMode>
 )

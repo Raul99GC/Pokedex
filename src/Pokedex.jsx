@@ -30,7 +30,6 @@ const Pokedex = () => {
             <div className="pokedex__num-poke">
                 <p className='pokedex__p-number'> 800 Pokemons for you tu choose your favorite</p>
             </div>
-
             <div className="filter">
                 <InputSearch />
                 <ButtonFilter />

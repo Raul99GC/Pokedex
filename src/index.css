@@ -582,6 +582,11 @@ p {
   overflow: hidden;
 }
 
+.page-card__container {
+  width: 37.5rem;
+  width: 100%;
+}
+
 .card-pre__pokemon-name {
   position: absolute;
   top: 1rem;
@@ -630,7 +635,7 @@ p {
 
 }
 
-.card-pre__type {
+.type {
   font-size: var(--p-font);
   width: 5.7rem;
   height: 2rem;
@@ -652,3 +657,133 @@ p {
 
 /* ====== page CARD ====== */
 
+.page-card {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(270deg, #B33327 0.15%, #D93E30 100%);
+  display: inline-block;
+}
+
+.page-card__inf-basic {
+  position: relative;
+  display: block;
+  
+}
+
+.page-card__h2 {
+  padding-top: 2rem;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: var(--h2-big-font);
+}
+
+.page-card__img {
+  width: 31.6rem;
+  position: relative;
+  z-index: 10;
+  bottom: -7rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.page-card__box-inf {
+  width: 100%;
+  min-height: 100%;
+  /* background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%); */
+  border-radius: 1.6rem 1.6rem 0 0;
+  flex-direction: column;
+  gap: 2rem;
+  /* position: absolute;
+  bottom: 0rem; */
+
+}
+
+.page-card__stats {
+  justify-content: space-between;
+  width: 35.2rem;
+  padding: 5rem 1.5rem 0 1.5rem;
+}
+
+.page-card__stat-box {
+  height: 5rem;
+  gap: 1rem;
+  text-transform: capitalize;
+}
+
+.page-card__circle {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--third);
+  border-radius: 50%;
+  display: flex;
+}
+
+.page-card__generation {
+  color: var(--white);
+}
+
+.page-card__type-box {
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+
+.page-card__type {
+  background-color: blue;
+  font-size: var(--p-font);
+  width: 5.7rem;
+  height: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.page-card__abilities {
+  width: 35.2rem;
+  height: 10rem;
+  background-color: var(--white);
+  border-radius: .8rem;
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 1.5rem;
+}
+
+.page-card__points {
+  width: 35.2rem;
+  height: 18.5rem;
+  background-color: var(--white);
+  border-radius: .8rem;
+  padding: 1.5rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.page-card__stat-numbers {
+  width: 35.2rem;
+  height: 6.8rem;
+  justify-content: space-between;
+}
+
+.page-card__box-stat {
+  width: 8.2rem;
+  min-height: 6.8rem;
+  background-color: var(--white);
+  border-radius: .8rem;
+  text-align: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.page-card__stat {
+  border: var(--dark) solid 1px;
+  border-radius: 50%;
+ 
+}
+
+.page-card__p {
+  font: var(--p-font);
+}

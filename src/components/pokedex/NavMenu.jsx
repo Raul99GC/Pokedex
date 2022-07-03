@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Logo from '../../assets/imgs/Logo.png'
-
-import { Routes, Route, NavLink } from 'react-router-dom'
 import Home from '../Home'
 import Pokedex from '../../Pokedex'
+
+import { Routes, Route, NavLink } from 'react-router-dom'
 
 const NavMenu = () => {
 
@@ -41,10 +41,10 @@ const NavMenu = () => {
                         <img src={Logo} alt="Logo pokemon" />
                      </a>
                      <ul className='menu-content__ul flex'>
-                        <li className='menu-content__item'><NavLink to={'/'} href="">Home</NavLink></li>
-                        <li className='menu-content__item'><NavLink to={'/pokedex'} href="">Pokedex</NavLink></li>
-                        <li className='menu-content__item'><a href="">Legendaries</a></li>
-                        <li className='menu-content__item'><a href="">Algo mas</a></li>
+                        <li className='menu-content__item'><NavLink to={'/'} >Home</NavLink></li>
+                        <li className='menu-content__item'><NavLink to={'/pokedex'} >Pokedex</NavLink></li>
+                        <li className='menu-content__item'><a href="#">Legendaries</a></li>
+                        <li className='menu-content__item'><a href="#">Algo mas</a></li>
                      </ul>
                   </div>
                </div>

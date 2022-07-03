@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
+import { NavLink } from 'react-router-dom'
+
+
 const CardPreview = ({ URL }) => {
 
 
@@ -31,7 +34,7 @@ const CardPreview = ({ URL }) => {
 
 
     return (
-        <div className='card-pre flex box-shadow'>
+        <section className='card-pre flex box-shadow'>
             <div className="card-pre__inf">
                 <h3 className='card-pre__pokemon-name'>{pokemon?.forms[0].name}</h3>
                 <div className="card-pre__status">
@@ -41,19 +44,21 @@ const CardPreview = ({ URL }) => {
                     <p className={`card-pre__p`}>Defense</p>
                 </div>
                 <div className="card-pre__type-box flex">
-                    <span className={`card-pre__type ${colorType(type)}`}>{type}</span>
+                    <span className={`type ${colorType(type)}`}>{type}</span>
                     {
-                        pokemon?.types[1] ? <span className={`card-pre__type ${colorType(secondType)} `}>{secondType}</span> : ''
+                        pokemon?.types[1] ? <span className={`type ${colorType(secondType)} `}>{secondType}</span> : ''
                     }
                 </div>
             </div>
             <div className={`card-pre__img-box flex ${colorType(type)}`}>
+                <NavLink to={`/pokedex/${pokemon?.id}` }>
                 <img className='card-pre__img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="Pokemon" />
+                </NavLink>
             </div>
 
 
 
-        </div>
+        </section>
     )
 }
 

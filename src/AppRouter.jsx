@@ -6,15 +6,21 @@ import Error404 from './components/Error404'
 import PagePokeCard from './components/pokedex/PagePokeCard'
 
 import { Routes, Route, NavLink } from 'react-router-dom'
+import PagesWithNavBar from './components/PagesWithNavBar'
 
 const AppRouter = () => {
     return (
         <>
-            <NavMenu />
             <Routes>
-                <Route path='/' element={<Home />} > </Route>
-                <Route path='/pokedex'  element={<Pokedex />} >
-                    <Route path=':id' element={<h1>Hola papus</h1>} />
+                <Route path='/' element={<PagesWithNavBar />} >
+                    <Route index element={<Home />} />
+                    <Route path='/pokedex' element={<Pokedex />} />
+                    <Route path='/pokedex/:id' element={<PagePokeCard />} />
+                    {/* <Route path='/pokedex' >
+                        <Route index element={<Pokedex />} />
+                        <Route path=':id' element={<PagePokeCard />} />
+                    </Route> */}
+
                 </Route>
 
                 <Route path="*" element={<Error404 />} />
