@@ -18,7 +18,10 @@ const PagePokeCard = ({ }) => {
             .catch(err => console.log(err))
     }, [])
 
-    console.log(pokemon)
+    console.log(pokemon?.base_experience)
+
+    const type = pokemon?.types[0].type.name
+    const secondType = pokemon?.types[1]?.type.name
 
     const colorType = type => {
         if (type === 'fire' || type === 'fairy') return 'color-card-red'
@@ -32,64 +35,66 @@ const PagePokeCard = ({ }) => {
     }
 
     return (
-        <div className="page-card">
-
-
-            <div className='page-card__container'>
-                <div className="page-card__inf-basic flex">
-                    <h2 className='page-card__h2'>{pokemon?.forms[0].name}</h2>
-                    <img className='page-card__img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="imagen pokemon" />
+        <div className="page-card flex">
+            <section className="page-card__box flex">
+                <div className="page-card-content-img ">
+                    <img className='page-card__img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
                 </div>
 
-                <div className="page-card__box-inf flex">
-                    <section className="page-card__stats flex">
-                        <div className="page-card__stat-box flex">
-                            <span className='page-card__circle flex'>578</span>
-                            <p className='page-card__generation'>generation 1</p>
-                        </div>
+                <div className="page-card__name">
+                    <h2 className='page-card__h2-name'>{pokemon?.name}</h2>
+                </div>
 
-                        <div className="page-card__type-box flex">
-                            <span className='type page-card__type'>grass</span>
-                            <span className='type page-card__type'>poison</span>
-                        </div>
-                    </section>
+                <div className="page-card__stats flex">
+                    <progress min='0' max='100' value={pokemon?.stats[0].base_stat}></progress>
+                    <p className='page-card__p'>Hp: {pokemon?.stats[0].base_stat}</p>
 
-                    <section className='page-card__abilities flex'>
-                        <h3>Abilities</h3>
-                        <p>overgrow - Chlorophyll</p>
-                    </section>
+                    <progress min='0' max='1000' value={pokemon?.base_experience}></progress>
+                    <p className='page-card__p'>Experience: {pokemon?.base_experience}</p>
 
-                    <section className="page-card__points flex">
-                        <h3>Healthy Points</h3>
-                        <p>1000,000</p>
-                        <progress min='0' max='100' value='75'></progress>
-                        <h3>Experience</h3>
-                        <p>1000,000</p>
-                        <progress min='0' max='100' value='75'></progress>
-                    </section>
 
-                    <section className="page-card__stat-numbers flex">
-                        <div className="page-card__box-stat flex">
-                            <span className='page-card__stat'>49</span>
-                            <p className='page-card__p'>Defense</p>
+                </div>
+
+                <div className="page-card__types flex">
+                    <span className={`type ${colorType(type)}`}>{type}</span>
+                    {
+                        pokemon?.types[1] ? <span className={`type ${colorType(secondType)} `}>{secondType}</span> : ''
+                    }
+                </div>
+
+                <div className="page-card__stats-points flex">
+                    <div className="page-card__box-point-stat flex">
+                        <div className="page-card__box-point flex">
+                            <p className='page-card__point'>{pokemon?.stats[1].base_stat}</p>
                         </div>
-                        <div className="page-card__box-stat flex">
-                            <span className='page-card__stat'>49</span>
-                            <p className='page-card__p'>Attack</p>
+                        <p className='page-card__name-point'>{pokemon?.stats[1].stat.name}</p>
+                    </div>
+                    <div className="page-card__box-point-stat flex">
+                        <div className="page-card__box-point flex">
+                            <p className='page-card__point'>{pokemon?.stats[2].base_stat}</p>
                         </div>
-                        <div className="page-card__box-stat flex ">
-                            <span className='page-card__stat'>49</span>
-                            <p className='page-card__p'>SP Defense</p>
+                        <p className='page-card__name-point'>{pokemon?.stats[2].stat.name}</p>
+                    </div>
+                    <div className="page-card__box-point-stat flex">
+                        <div className="page-card__box-point flex">
+                            <p className='page-card__point'>{pokemon?.stats[3].base_stat}</p>
                         </div>
-                        <div className="page-card__box-stat flex">
-                            <span className='page-card__stat'>49</span>
-                            <p className='page-card__p'>SP Attack</p>
+                        <p className='page-card__name-point'>{pokemon?.stats[3].stat.name}</p>
+                    </div>
+                    <div className="page-card__box-point-stat flex">
+                        <div className="page-card__box-point flex">
+                            <p className='page-card__point'>{pokemon?.stats[4].base_stat}</p>
                         </div>
-                    </section>
+                        <p className='page-card__name-point'>{pokemon?.stats[4].stat.name}</p>
+                    </div>
+
+
                 </div>
 
 
-            </div>
+
+
+            </section>
         </div>
 
     )

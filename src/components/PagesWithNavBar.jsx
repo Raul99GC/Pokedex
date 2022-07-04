@@ -1,12 +1,14 @@
 import React from 'react'
 import NavMenu from './pokedex/NavMenu'
-import {Outlet} from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 const PagesWithNavBar = () => {
   return (
     <div>
-        <NavMenu />
+      <NavMenu />
+      <div className="pokedex-main-content">
         <Outlet />
+      </div>
     </div>
   )
 }
