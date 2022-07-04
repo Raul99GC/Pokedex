@@ -15,11 +15,11 @@ import AppRouter from './AppRouter'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <HashRouter>
       <Provider store={store}>
         <AppRouter />
       </Provider>
     </HashRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 )

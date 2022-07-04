@@ -19,7 +19,6 @@ const CardPreview = ({ URL }) => {
     const type = pokemon?.types[0].type.name
     const secondType = pokemon?.types[1]?.type.name
 
-    console.log(secondType)
 
     const colorType = type => {
         if (type === 'fire' || type === 'fairy' ) return 'color-card-red'
@@ -36,7 +35,7 @@ const CardPreview = ({ URL }) => {
     return (
         <section className='card-pre flex box-shadow'>
             <div className="card-pre__inf">
-                <h3 className='card-pre__pokemon-name'>{pokemon?.forms[0].name}</h3>
+                <h3 className='card-pre__pokemon-name'>{pokemon?.name}</h3>
                 <div className="card-pre__status">
                     <div className='card-pre__number flex'>{pokemon?.stats[1].base_stat}</div>
                     <div className='card-pre__number flex'>{pokemon?.stats[2].base_stat}</div>

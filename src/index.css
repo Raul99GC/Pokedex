@@ -515,6 +515,7 @@ p {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  
 }
 
 .pokedex {
@@ -548,12 +549,14 @@ p {
 
 .form-search__input {
   width: 100%;
+  height: 4rem;
   border-radius: 4rem;
   letter-spacing: .15rem;
-  padding: .8rem;
+  padding: 1rem;
   background-color: #F2F2F2;
   border: none;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  font-weight: var(--p-font);
 }
 
 .btn-container-filter {
@@ -572,8 +575,9 @@ p {
 .pokedex-main {
   padding-top: 5rem;
   width: 100%;
-  flex-direction: column;
-  gap: 2rem;
+  flex-direction: row;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
 
@@ -743,4 +747,14 @@ p {
 .page-card__name-point {
   margin: 1rem 0 1rem 0;
   text-transform: capitalize;
+}
+
+
+
+/* ======== Pagination =========== */
+
+.pagination {
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
 }
