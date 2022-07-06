@@ -17,7 +17,6 @@ const NavMenu = () => {
          setBtnMenu(false)
       }
    }
-   console.log(btnMenu)
 
    return (
       <header className='header flex'>
@@ -41,8 +40,8 @@ const NavMenu = () => {
                         <img src={Logo} alt="Logo pokemon" />
                      </a>
                      <ul className='menu-content__ul flex'>
-                        <li className='menu-content__item'><NavLink to={'/'} >Home</NavLink></li>
-                        <li className='menu-content__item'><NavLink to={'/pokedex'} >Pokedex</NavLink></li>
+                        <li onClick={clickBtnMenu} className='menu-content__item'><NavLink to={'/'} >Home</NavLink></li>
+                        <li onClick={clickBtnMenu} className='menu-content__item'><NavLink to={'/pokedex'} >Pokedex</NavLink></li>
                         <li className='menu-content__item'><a href="#">Legendaries</a></li>
                         <li className='menu-content__item'><a href="#">Algo mas</a></li>
                      </ul>

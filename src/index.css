@@ -159,7 +159,7 @@ p {
 
 /********************************* STYLES ************************************************/
 
-/*========== LOGUIN =========*/
+/*========== LOGIN =========*/
 .login {
   position: relative;
   width: 100%;
@@ -242,6 +242,7 @@ p {
 
 .login__logo-container {
   width: 80%;
+  max-width: 90rem;
   height: auto;
   margin-top: 8rem;
 }
@@ -282,6 +283,11 @@ p {
   visibility: hidden;
   -webkit-transform: translateY(-4rem);
   transform: translateY(-4rem);
+}
+
+.p__error {
+  padding-top: 2rem;
+  color: var(--danger);
 }
 
 .login__buton {
@@ -541,6 +547,7 @@ p {
 
 .filter {
   width: 32.2rem;
+  flex-direction: column;
 }
 
 .form-search {
@@ -564,11 +571,12 @@ p {
 }
 
 .button--filter {
-  width: 7.7rem;
-  padding: .5rem;
+  width: 15.7rem;
+  padding: 1rem;
+  border-radius: 1rem;
   font-size: 1.2rem;
   background-color: #F2F2F2;
-
+  text-align: center;
 }
 
 
@@ -647,7 +655,7 @@ p {
 
 .type {
   font-size: var(--p-font);
-  width: 5.7rem;
+  width: 6.7rem;
   height: 2rem;
   text-align: center;
   border-radius: 1rem;
@@ -697,6 +705,7 @@ p {
 
 .page-card__h2-name {
   font-size: var(--h2-big-font);
+  text-align: center;
 }
 
 .page-card__stats {
@@ -754,7 +763,32 @@ p {
 /* ======== Pagination =========== */
 
 .pagination {
+  width: 30rem;
+  padding-top: 2rem;
+}
+
+.pagination__list {
   width: 100%;
-  flex-direction: column;
   gap: 2rem;
+}
+
+.pagination__btn {
+  width: 3.5rem;
+  height: 2.5rem;
+  background-color: var(--primary);
+  border-radius: 1rem;
+  text-align: center;
+
+}
+
+.error404 {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--danger);
+  flex-direction: column;
+}
+
+.error404__gif {
+  width: auto;
+  height: 70%;
 }

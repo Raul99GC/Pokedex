@@ -1,57 +1,70 @@
+import { current } from '@reduxjs/toolkit'
 import React, { useEffect, useState } from 'react'
 
-const Pagination = ({ pokemons, filterPokemon, pokemonsPagination, setpokemonsPagination }) => {
+const Pagination = ({ pokemons, filterPokemon, setPokemonsPagination, pokemonsPagination, setNumberPokemons }) => {
 
-    const [page, setPage] = useState(0)
-    const maxItems = 12
-    const totalItems = pokemons?.length
-    const maxPage = Math.ceil(totalItems / maxItems)
-    const arrayPokemons = pokemons?.slice(page * maxItems, maxItems * (page + 1))
-    console.log(arrayPokemons)
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postPerPage, setPostPerPage] = useState(12)
+    const [totalPost, settotalPost] = useState()
+
+    const indexOfLastPost = currentPage * postPerPage
+    const indexOfFirstPost = indexOfLastPost - postPerPage
+
+
+    const pageNumbers = []
+
+
 
     useEffect(() => {
-        setpokemonsPagination(arrayPokemons)
+        if (filterPokemon) {
+            const currentPost = filterPokemon?.slice(indexOfFirstPost, indexOfLastPost)
+            settotalPost(filterPokemon?.length)
+            console.log(totalPost)
+            setPokemonsPagination(currentPost)
+        } else {
+            const currentPost = pokemons?.slice(indexOfFirstPost, indexOfLastPost)
+            settotalPost(pokemons?.length)
+            console.log(totalPost)
+            setPokemonsPagination(currentPost)
+        }
+        
+    }, [filterPokemon, pokemons, currentPage])
+    // console.log(totalPost)
 
-    }, [pokemonsPagination])
 
 
-    const onNextPage = () => {
-        setPage(page + 1)
+    for (let i = 1; i <= Math.ceil(totalPost / postPerPage); i++) {
+        pageNumbers.push(i)
     }
 
-    const onPrevPage = () => {
-        setPage(page + -1)
+    const nextPage = () => {
+        if(currentPage < (pageNumbers.length)) setCurrentPage( currentPage + 1)
     }
-
-
-    // console.log(totalItems)
+    const prevPage = () => {
+        if(currentPage > 1) setCurrentPage( currentPage - 1)
+    }
 
     return (
         <>
-            <div className='pagination flex'>
-                <div className="buttons">
-                    <button className='pagination__btn prev'
-                        onClick={onPrevPage}
-                        disabled={
-                            !page
-                        }
-                    >prev</button>
-                    <button
-                        onClick={onNextPage}
-                        disabled={
-                            // si page es igual al ultimo se desactiva el boton
-                            page === Math.ceil(totalItems / maxItems) - 1
-                        }
-                    >
-                        Next
-                    </button>
-                </div>
-                <p>
-                    {page + 1} of {maxPage}
-                </p>
+            <nav className='pagination flex'>
 
 
-            </div>
+                <ul className="pagination__list flex">
+                    <button onClick={() => setCurrentPage(1)} className='pagination__btn'>&#60;&#60;</button>
+                    <button onClick={prevPage} className='pagination__btn'>&#60;</button>
+
+
+                    <button onClick={() => setCurrentPage(currentPage)} className='pagination__btn'>{currentPage}</button>
+                    <button onClick={() => setCurrentPage((currentPage + 1))} className='pagination__btn'>{currentPage +1}</button>
+                    <button onClick={() => setCurrentPage((currentPage + 2))} className='pagination__btn'>{currentPage +2}</button>
+
+
+                    <button onClick={nextPage} className='pagination__btn'>&#62;</button>
+                    <button onClick={() => setCurrentPage(pageNumbers.length)} className='pagination__btn'>&#62;&#62;</button>
+
+                </ul>
+            </nav>
         </>
     )
 }

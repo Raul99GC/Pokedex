@@ -41,12 +41,12 @@ const PagePokeCard = ({ }) => {
                     <img className='page-card__img' src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
                 </div>
 
-                <div className="page-card__name">
+                <div className="page-card__name flex">
                     <h2 className='page-card__h2-name'>{pokemon?.name}</h2>
                 </div>
 
                 <div className="page-card__stats flex">
-                    <progress min='0' max='100' value={pokemon?.stats[0].base_stat}></progress>
+                    <progress min='0' max='150' value={pokemon?.stats[0].base_stat}></progress>
                     <p className='page-card__p'>Hp: {pokemon?.stats[0].base_stat}</p>
 
                     <progress min='0' max='1000' value={pokemon?.base_experience}></progress>
