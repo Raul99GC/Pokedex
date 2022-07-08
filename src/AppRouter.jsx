@@ -4,6 +4,7 @@ import Pokedex from './Pokedex'
 import NavMenu from './components/pokedex/NavMenu'
 import Error404 from './components/Error404'
 import PagePokeCard from './components/pokedex/PagePokeCard'
+import './index.css'
 
 import { Routes, Route, NavLink } from 'react-router-dom'
 import PagesWithNavBar from './components/PagesWithNavBar'
