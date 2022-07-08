@@ -97,9 +97,9 @@ h3 {
   font-size: var(--h3-font);
 }
 
-p {
-  /* font-size: var(--p-font); */
-}
+/* p {
+  font-size: var(--p-font);
+} */
 
 /* background imgs */
 
@@ -751,7 +751,7 @@ p {
   margin-top: 1rem;
 }
 
-.page-card__point {}
+/* .page-card__point {} */
 
 .page-card__name-point {
   margin: 1rem 0 1rem 0;
