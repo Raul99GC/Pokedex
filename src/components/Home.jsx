@@ -3,7 +3,7 @@ import NavMenu from './pokedex/NavMenu'
 import pikachu from '../assets/imgs/Pikachu.png'
 import cloud from '../assets/imgs/Cloud.png'
 import pokeballRed from '../assets/imgs/Pokeball2.png'
-// import pokeballgray from '../assets/imgs/PokeBall1.png'
+import pokeballgray from '../assets/imgs/PokeBallGray.webp'
 
 // React Routers
 import { Routes, Route, NavLink } from 'react-router-dom'
@@ -23,7 +23,7 @@ const Home = () => {
                <img className='banner-home__cloud' src={cloud} alt="" />
                <img className='banner-home__cloud banner-home__cloud--small' src={cloud} alt="" />
                <img className='banner-home__pokeball-red' src={pokeballRed} alt="pokeball red" />
-               {/* <img className='banner-home__pokeball-gray' src={pokeballgray} alt="pokeball gray" /> */}
+               <img className='banner-home__pokeball-gray' src={pokeballgray} alt="pokeball gray" />
             </div>
 
          </div>
