@@ -262,7 +262,8 @@ h3 {
   margin: 0 auto;
   letter-spacing: .2rem;
   width: 75%;
-  padding: 1rem 1.5rem;
+  height: 6rem;
+  padding: 2rem 1.5rem;
   border: none;
   border-bottom: 0.3rem solid transparent;
   box-shadow: -3px 5px 9px 1px rgba(0, 0, 0, 0.8);
