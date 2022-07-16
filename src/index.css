@@ -581,7 +581,7 @@ h3 {
 
 
 .pokedex-main {
-  padding-top: 5rem;
+  padding: 5rem 0;
   width: 100%;
   flex-direction: row;
   gap: 3rem;

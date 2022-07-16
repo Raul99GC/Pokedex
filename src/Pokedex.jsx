@@ -126,7 +126,7 @@ const Pokedex = () => {
             </div>
 
 
-            <div className="filter flex">
+            {/* <div className="filter flex">
 
                 <Pagination
                     pokemons={pokemons}
@@ -134,7 +134,7 @@ const Pokedex = () => {
                     setPokemonsPagination={setPokemonsPagination}
                     pokemonsPagination={pokemonsPagination}
                 />
-            </div>
+            </div> */}
 
         </main>
     )
