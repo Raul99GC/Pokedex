@@ -386,6 +386,21 @@ h3 {
   cursor: pointer;
 }
 
+
+.menu-content-desktop {
+  display: none;
+}
+
+.menu-content-desktop__ul {
+  gap: 1rem;
+  padding: 0 4rem;
+}
+
+.menu-content-desktop__item a:hover {
+  color: var(--danger);
+}
+
+
 .menu-content {
   background: linear-gradient(180deg, #F5DB13 0%, #F2B807 100%);
   height: 60%;
@@ -393,7 +408,7 @@ h3 {
 
 .menu-content__items {
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 2rem;
   height: 100%;
 }
@@ -795,6 +810,19 @@ h3 {
 }
 
 @media (min-width: 768px) {
+
+  .menu-content-desktop {
+    display: flex;
+  }
+
+  .navbar-btn {
+    display: none;
+  }
+
+  .menu-box {
+    right: -100%;
+  }
+
   .pokedex-main {
     max-width: 144rem;
   }
